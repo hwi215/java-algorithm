@@ -7,7 +7,7 @@ import java.util.Scanner;
 public class boj_10807_개수세기 {
     public static void main(String[] args) throws IOException {
 
-        // 입력1 - bufferReader => 예외처리 필요!
+        // 입력1 - bufferReader => 예외처리 필요! - 스캐너보다 속도가 훨씬 빠름!!
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
