@@ -1,9 +1,8 @@
 package com.boj.arrayList;
 
 import java.io.*;
-import java.util.Arrays;
 
-public class boj_11720_숫자의합 {
+public class Boj_11720_숫자의합 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
