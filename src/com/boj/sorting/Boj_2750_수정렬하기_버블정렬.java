@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 /**
  * 버블정렬
  */
-public class Boj_2750_수정렬하기 {
+public class Boj_2750_수정렬하기_버블정렬 {
     static int n;
 
     public static void swap(int[] arr, int i, int j){
