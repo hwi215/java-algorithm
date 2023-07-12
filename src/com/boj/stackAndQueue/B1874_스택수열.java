@@ -1,8 +1,6 @@
-package com.stackAndQueue;
+package com.boj.stackAndQueue;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Stack;
 
 /**
@@ -56,7 +54,5 @@ public class B1874_스택수열 {
             }
              */
         }
-
-
     }
 }
