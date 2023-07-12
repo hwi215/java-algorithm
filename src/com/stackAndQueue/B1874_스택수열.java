@@ -16,7 +16,7 @@ public class B1874_스택수열 {
         StringBuilder sb = new StringBuilder();
 
         Stack<Integer> stack = new Stack<>();
-        List<String> arr = new ArrayList<>();
+        //List<String> arr = new ArrayList<>();
 
         int n = Integer.parseInt(br.readLine());
         int a = 1;
