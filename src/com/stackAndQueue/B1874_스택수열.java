@@ -13,6 +13,7 @@ public class B1874_스택수열 {
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
 
         Stack<Integer> stack = new Stack<>();
         List<String> arr = new ArrayList<>();
@@ -28,12 +29,14 @@ public class B1874_스택수열 {
 
             while(a <= t){
                 stack.push(a);
-                arr.add("+");
+                //arr.add("+");
+                sb.append("+").append("\n");
                 a += 1;
             }
 
             target = stack.pop();
-            arr.add("-");
+            //arr.add("-");
+            sb.append("-").append("\n");
             i += 1;
 
             if(target > t){ // 수열 만들기 불가능한 경우
@@ -44,10 +47,14 @@ public class B1874_스택수열 {
 
         }
 
+
         if(check == true){ // 수열 만들기 가능하면, 해당 연산 출력
+            System.out.println(sb.toString());
+            /*
             for(int j = 0; j < arr.size(); j++){
                 System.out.println(arr.get(j));
             }
+             */
         }
 
 
