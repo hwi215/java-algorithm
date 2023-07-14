@@ -17,13 +17,15 @@ import static java.lang.Math.min;
  */
 public class Boj_2961_도영이가만든맛있는음식 {
 
-    static int[] arr;
-    static int[] arr1;
-    static int[] arr2;
+    static int[] arr; // 재료 번호
+    static int[] arr1; // 신맛 담은 배열
+    static int[] arr2; // 쓴맛 담은 배열
     static boolean[] isSelected; // 마킹배열
-    static int n;
-    static int minus;
-    static List<Integer> t;
+    static int n; // 재료 수
+    static int minus; // 최솟값 (정답)
+    static List<Integer> t; // 부분배열의 최소값을 저정하기 위한 리스트
+
+    //static int ans = Integer.MIN_VALUE; // 최솟값 저장(정답)
 
 
     static void subset(int size){
@@ -42,18 +44,19 @@ public class Boj_2961_도영이가만든맛있는음식 {
             }
 
             if(result.size() != 0) {
-                int total1 = 1;
-                int total2 = 0;
+                int total1 = 1; // 신맛 계산
+                int total2 = 0; // 쓴맛 계산
 
                 for (int i = 0; i < result.size(); i++) {
                     int idx = result.get(i);
                     total1 *= arr1[idx - 1]; // 신맛
                     total2 += arr2[idx - 1]; // 쓴맛
                 }
-                minus = min(minus, abs(total1 - total2));
+                minus = min(minus, abs(total1 - total2)); // 최솟값 업데이트
 
             }
 
+            // 최솟값 저장 후 정렬
             if(t.size() > 0){
                 if(t.get(t.size()-1) > minus) {
                     t.add(minus);
@@ -61,7 +64,6 @@ public class Boj_2961_도영이가만든맛있는음식 {
             }else{
                 t.add(minus);
             }
-
             Collections.sort(t);
 
             return;
@@ -88,6 +90,7 @@ public class Boj_2961_도영이가만든맛있는음식 {
         t = new ArrayList<>();
         n = Integer.parseInt(br.readLine());// 재료의 개수
 
+        // 초기화
         arr = new int[n];
         arr1 = new int[n];
         arr2 = new int[n];
