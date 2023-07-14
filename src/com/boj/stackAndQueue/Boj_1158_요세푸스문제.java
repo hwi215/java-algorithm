@@ -8,6 +8,7 @@ import java.util.Queue;
 
 /**
  * 원형큐
+ * StringBuilder를 이용해서 마지막에 한 번만 출력하는 것이 효율적!!
  */
 public class Boj_1158_요세푸스문제 {
     public static void main(String[] args) throws IOException {
