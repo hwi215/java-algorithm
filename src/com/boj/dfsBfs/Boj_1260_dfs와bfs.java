@@ -6,6 +6,10 @@ import java.io.InputStreamReader;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * dfs 스택으로도 구현해보기
+ * 방문처리 들어오자마자로 바꿔보기(성능은 좀 더 안좋음)
+ */
 public class Boj_1260_dfs와bfs {
     static boolean[] isVisited;
     static int N;
@@ -13,6 +17,7 @@ public class Boj_1260_dfs와bfs {
     static int startV; // 시작점
     static int[][] graph;
 
+    // dfs - 1. 재귀로 구현
     static void dfs(int v) {
         isVisited[v] = true; // 방문 처리
         System.out.print(v + " ");
@@ -24,6 +29,11 @@ public class Boj_1260_dfs와bfs {
         }
     }
 
+    // dfs - 2. 스택으로 구현
+    static void dfsStack(){
+
+    }
+
     static void bfs(){
         Queue<Integer> queue = new LinkedList<>();
         queue.offer(startV); // 시작점 큐에 넣고 시작
@@ -33,6 +43,7 @@ public class Boj_1260_dfs와bfs {
         while(!queue.isEmpty()){
             int target = queue.poll(); // 꺼내기
 
+            // **들어가자마자 마킹해도 됨
             for(int i = 1; i <= N; i++){
                 if(isVisited[i] == false && graph[target][i] == 1){
                     queue.offer(i); // 큐에 넣기
