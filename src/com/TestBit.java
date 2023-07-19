@@ -17,10 +17,19 @@ public class TestBit {
 
     static ArrayList<Integer>[] votes; // 각 순위별로 후보자 우선순위 행렬을 담은 리스트
     static boolean[] rate; // 득표율 50퍼 넘는 지 여부
+    static int countUp50; // 득표율 50퍼 넘는 후보자 수
 
     static int[] tmp; // 후보자의 득표 수를 담은 배열
     static ArrayList<Integer> outList; // 탈락자 인덱스 담는 리스트
 
+    static void updateVoteCount(){  // 탈락자에 포함되지 않은 사람들만 득표수 갱신
+        // 0~(N-1) 순위만
+        for (int i = 0; i < votes[ranking].size(); i++) {
+            if(!outList.contains(votes[ranking].get(i) - 1)) {
+                tmp[votes[ranking].get(i) - 1]++;
+            }
+        }
+    }
 
     static void checkRate(int[] arr){ // 득표 비율 계산
 
@@ -39,6 +48,16 @@ public class TestBit {
         }
 
 
+    }
+
+    static void checkCountUp50(){ // 50퍼 넘는 후보자 확인
+        countUp50 = 0; // 50퍼 넘는 후보자 수
+        for (int i = 0; i < tmp.length; i++) {
+            if (rate[i]) {
+                countUp50++; // 50퍼 넘는 후보자 수 갱신
+                resultList.add(candidateList.get(i)); // 50퍼 넘는 후보자 리스트에 담기
+            }
+        }
     }
 
     static void outCandidate(){ // 제일 낮은 후보자 탈락 후 점수 넘겨주기
@@ -146,14 +165,19 @@ public class TestBit {
             }
 
             // 0~(N-1) 순위만
+            /*
             for (int i = 0; i < votes[ranking].size(); i++) {
                 if(!outList.contains(votes[ranking].get(i) - 1)) { // 탈락자에 포함되지 않은 사람들만 득표수 갱신
                     tmp[votes[ranking].get(i) - 1]++;
                 }
             }
 
+             */
+            updateVoteCount(); // 탈락자에 포함되지 않은 사람들만 득표수 갱신
+
             checkRate(tmp); // 득표율 계산
 
+            /*
             int countUp50 = 0; // 50퍼 넘는 후보자 수
             for (int i = 0; i < tmp.length; i++) {
                 if (rate[i]) {
@@ -161,6 +185,10 @@ public class TestBit {
                     resultList.add(candidateList.get(i)); // 50퍼 넘는 후보자 리스트에 담기
                 }
             }
+
+             */
+
+            checkCountUp50(); // 50퍼 넘는 후보자 리스트에 담기
 
             if (countUp50 != 0) { // 50퍼 넘는사람 있는 경우
                 for (int i = 0; i < resultList.size(); i++) {
