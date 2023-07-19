@@ -70,13 +70,13 @@ public class TestBit {
     static void outCandidate(ArrayList<Integer> arr){ // 제일 낮은 후보자 탈락 후 점수 넘겨주기
 
         System.out.println("탈락자 내보내기~~~~~~~~~~~~~~~");
-        min = arr.get(0);
+        min = tmp[0];
         minIdx = 0;
         max = 0;
         maxIdx = 0;
 
         int countMax = 0; // 가장 높은 선호도를 가진 인원 수
-        for(int i = 1; i < tmp.length; i++){
+        for(int i = 0; i < tmp.length; i++){
             if(min > tmp[i]){  // 최소값 찾기
                 min = tmp[i];
                 minIdx = i;
@@ -232,8 +232,9 @@ public class TestBit {
             }
 
             if (countUp50 != 0) {
-                for (int i = 0; i < candidateList.size(); i++) {
-                    System.out.println(candidateList.get(i));
+                System.out.println("50퍼 넘는사람 있음 !!!" + countUp50);
+                for (int i = 0; i < resultList.size(); i++) {
+                    System.out.println(resultList.get(i));
                 }
                 System.out.println("--------50퍼 넘음-----------");
                 break;
