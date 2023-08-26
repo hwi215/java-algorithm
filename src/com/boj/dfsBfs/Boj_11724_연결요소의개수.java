@@ -46,9 +46,7 @@ public class Boj_11724_연결요소의개수 {
             graph[i] = new ArrayList<>();
         }
 
-        for(int i = 0; i <= N; i++){
-            graph[i] = new ArrayList<>();
-        }
+
 
 
         for(int i = 0; i < M; i++){

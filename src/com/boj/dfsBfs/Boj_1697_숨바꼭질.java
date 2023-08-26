@@ -75,7 +75,6 @@ public class Boj_1697_숨바꼭질 { // bfs + dp 문제
         N = Integer.parseInt(st.nextToken()); // 수빈 처음 위치
         K = Integer.parseInt(st.nextToken()); // 동생 처음 위치
 
-
         // 초기화
         dp = new int[100001];
         isVisited = new boolean[100001];
