@@ -61,6 +61,7 @@ public class Boj_9742_순열 {
             System.out.println(s + " " + n + " = " + result);
 
 
+
         }
 
     }
