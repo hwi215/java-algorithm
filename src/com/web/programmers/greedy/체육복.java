@@ -1,5 +1,7 @@
 package com.web.programmers.greedy;
 import java.util.*;
+
+// greedy
 public class 체육복 {
     class Solution {
         public int solution(int n, int[] lost, int[] reserve) {
