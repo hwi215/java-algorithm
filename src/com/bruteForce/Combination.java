@@ -13,7 +13,7 @@ public class Combination {
     static boolean[] isSelected; // 마킹배열
 
 
-    public void combination(int size){ // 조합
+    public static void combination(int size){ // 조합
 
         // 종료 조건
         if(size == R){
