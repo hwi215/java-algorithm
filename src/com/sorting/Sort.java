@@ -8,7 +8,7 @@ public class Sort {
         Arrays.sort(intArr); // 오름차순 정렬
 
         Arrays.sort(intArr, Collections.reverseOrder()); // 내림차순 정렬
-// COllections.reverseOrder()
+        // Collections.reverseOrder()
         int[][] routes = new int[5][5];
 
         // 오름차순 정렬
@@ -30,7 +30,7 @@ public class Sort {
 
         Arrays.sort(str, new Comparator<String>(){
             @Override
-            public int compare(String s1, String s2){
+            public int compare(String a, String b){
                 return (b+a).compareTo(a+b);
             }
 
@@ -38,7 +38,7 @@ public class Sort {
 
         HashMap<String, Integer> map = new HashMap<>();
 
-        for(String name: p){
+        for(String name: map.keySet()){
             if(map.get(name) == null){
                 map.put(name, map.get(name)+1);
             }
@@ -47,6 +47,7 @@ public class Sort {
         //해쉬정렬 - get, put
         Iterator<Map.Entry<String, Integer>> iter = map.entrySet().iterator();
 
+        String answer = "";
         while(iter.hasNext()){
             Map.Entry<String, Integer> entry = iter.next();
             if(entry.getValue() == 0){
