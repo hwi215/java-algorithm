@@ -3,7 +3,6 @@ import java.util.*;
 
 public class 여행경로 {
     // dfs
-    class Solution {
         static boolean[] isVisited;
         static ArrayList<String> answers;
         public String[] solution(String[][] tickets) {
@@ -31,5 +30,4 @@ public class 여행경로 {
             }
 
         }
-    }
 }

@@ -9,7 +9,6 @@ package com.web.programmers.BfsDfs;
  * +4-1+2-1 = 4
  */
 public class 타겟넘버 {
-    class Solution {
         static int count = 0;
         public int solution(int[] numbers, int target) {
 
@@ -27,5 +26,4 @@ public class 타겟넘버 {
             dfs(idx + 1, numbers, answer + numbers[idx], target);
             dfs(idx + 1, numbers, answer - numbers[idx], target);
         }
-    }
 }

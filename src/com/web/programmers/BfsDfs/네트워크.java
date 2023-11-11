@@ -1,7 +1,6 @@
 package com.web.programmers.BfsDfs;
 
 public class 네트워크 {
-    class Solution {
 
         static boolean[] isVisited;
         public int solution(int n, int[][] computers) {
@@ -28,5 +27,4 @@ public class 네트워크 {
 
             return;
         }
-    }
 }
